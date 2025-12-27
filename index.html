@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="loader-main">
+      
+
+        <div class="loader-content">
+            <div class="countdown">
+              <h1>
+                <span class="num" id="num">0</span>
+                <span class="percent">%</span>
+              </h1>
+            </div>
+
+            <div class="logo">
+               <h1>ANYTAX</h1>
+            </div>
+        </div>
+          <div class="skew"></div>
+    </div>
+
+    <script>
+        let num = document.getElementById("num");
+        let counter = 0;
+
+        const interval = setInterval(() => {
+            if(counter == 100){
+            clearInterval(interval);
+            } else {
+            counter += 1;
+            num.innerText = counter;
+            }
+        }, 30);
+    </script>
+</body>
+</html>
