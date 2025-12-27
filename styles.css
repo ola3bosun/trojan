@@ -12,15 +12,19 @@ body{
     max-height: 100vh;
     max-width: 100vw;
     color: cadetblue;
+    position: relative;
 }
 
 .loader-main{
     height: 100vh;
     /* width: 100vw; */
     position: relative;
+    z-index: 5;
     background-color: black;
     display: flex;
     align-items: last baseline;
+    animation: fadeOut 1s forwards;
+    animation-delay: 3.5s;
 }
 
 .loader-content{
@@ -47,6 +51,27 @@ body{
     animation-delay: 1s;
 }
 
+.placeholder{
+    font-size: 4.5rem;
+    text-align: center;
+    margin-top: 2rem;
+    animation: fadeIn 1s forwards;
+    animation-delay: 4.5s;
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+        display: none;
+        visibility: hidden;
+    }
+    100%{
+        opacity: 1;
+        display: block;
+        visibility: visible;
+    }
+}
+
 @keyframes slide {
     0%{
         translate: 0 0;
@@ -69,6 +94,17 @@ body{
     100%{
         translate: 0 -100%;
         transform: skewY(0deg);
+    }
+}
+
+@keyframes fadeOut {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        height: 0;
+        display: none;
     }
 }
 
